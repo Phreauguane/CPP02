@@ -88,24 +88,24 @@ bool Fixed::operator!=(const Fixed& f)
 	return this->toFloat() != f.toFloat();
 }
 
-const Fixed& Fixed::operator+(const Fixed& f)
+float Fixed::operator+(const Fixed& f)
 {
-	return Fixed(this->toFloat() + f.toFloat());
+	return (this->toFloat() + f.toFloat());
 }
 
-const Fixed& Fixed::operator-(const Fixed& f)
+float Fixed::operator-(const Fixed& f)
 {
-	return Fixed(this->toFloat() - f.toFloat());
+	return (this->toFloat() - f.toFloat());
 }
 
-const Fixed& Fixed::operator*(const Fixed& f)
+float Fixed::operator*(const Fixed& f)
 {
-	return Fixed(this->toFloat() * f.toFloat());
+	return (this->toFloat() * f.toFloat());
 }
 
-const Fixed& Fixed::operator/(const Fixed& f)
+float Fixed::operator/(const Fixed& f)
 {
-	return Fixed(this->toFloat() / f.toFloat());
+	return (this->toFloat() / f.toFloat());
 }
 
 const Fixed& Fixed::operator++()
