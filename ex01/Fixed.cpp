@@ -58,6 +58,94 @@ std::ostream &operator<<(std::ostream &output, Fixed const &fixed)
 	return (output);
 }
 
+bool Fixed::operator<(const Fixed& f)
+{
+	return this->toFloat() < f.toFloat();
+}
+
+bool Fixed::operator<=(const Fixed& f)
+{
+	return this->toFloat() <= f.toFloat();
+}
+
+bool Fixed::operator>(const Fixed& f)
+{
+	return this->toFloat() > f.toFloat();
+}
+
+bool Fixed::operator>=(const Fixed& f)
+{
+	return this->toFloat() >= f.toFloat();
+}
+
+bool Fixed::operator==(const Fixed& f)
+{
+	return this->toFloat() == f.toFloat();
+}
+
+bool Fixed::operator!=(const Fixed& f)
+{
+	return this->toFloat() != f.toFloat();
+}
+
+const Fixed& Fixed::operator+(const Fixed& f)
+{
+	return Fixed(this->toFloat() + f.toFloat());
+}
+
+const Fixed& Fixed::operator-(const Fixed& f)
+{
+	return Fixed(this->toFloat() - f.toFloat());
+}
+
+const Fixed& Fixed::operator*(const Fixed& f)
+{
+	return Fixed(this->toFloat() * f.toFloat());
+}
+
+const Fixed& Fixed::operator/(const Fixed& f)
+{
+	return Fixed(this->toFloat() / f.toFloat());
+}
+
+const Fixed& Fixed::operator++()
+{
+	++bits;
+	return *this;
+}
+
+const Fixed Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	++bits;
+	return temp;
+}
+
+const Fixed& Fixed::operator--()
+{
+	--bits;
+	return *this;
+}
+
+const Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--bits;
+	return temp;
+}
+
+const Fixed& Fixed::operator+=(const Fixed& f)
+{
+	*this = *this + f;
+	return *this;
+}
+
+const Fixed& Fixed::operator-=(const Fixed& f)
+{
+	*this = *this - f;
+	return *this;
+}
+
 Fixed::~Fixed()
 {
 	cout("Destructor called");
