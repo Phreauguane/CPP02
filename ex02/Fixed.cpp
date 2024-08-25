@@ -21,7 +21,7 @@ Fixed::Fixed(const int i)
 Fixed::Fixed(const float f)
 {
 	cout("Float constructor called");
-	bits = int(f * float(1 << nbits)); // get the integer part
+	bits = roundf(f * float(1 << nbits)); // get the integer part
 }
 
 int Fixed::toInt() const

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
+
 #define cout(x) std::cout << x << std::endl
 
 class Fixed
